@@ -162,11 +162,47 @@
         }
 
         @media (max-width: 768px) {
+            .celebrity-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
             .featured-celebrity {
                 grid-template-columns: 1fr;
             }
             .featured-celebrity .celebrity-emoji {
                 font-size: 4rem;
+            }
+            .featured-celebrity .celebrity-header,
+            .featured-celebrity .celebrity-body {
+                padding: 25px;
+            }
+            .celebrity-card {
+                border-radius: 15px;
+            }
+            .celebrity-header {
+                padding: 20px;
+            }
+            .celebrity-name {
+                font-size: 1.3rem;
+            }
+            .celebrity-emoji {
+                font-size: 3rem;
+            }
+            .celebrity-body {
+                padding: 20px;
+            }
+            .celebrity-title {
+                font-size: 0.9rem;
+            }
+            .celebrity-description {
+                font-size: 0.9rem;
+            }
+            .intro-text {
+                font-size: 1rem;
+            }
+            .featured-label {
+                font-size: 0.7rem;
+                padding: 4px 12px;
             }
         }
     </style>
