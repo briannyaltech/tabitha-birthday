@@ -123,6 +123,14 @@ main {
     letter-spacing: 2px;
 }
 
+.time-unit .label-short {
+    display: none;
+}
+
+.time-unit .label-full {
+    display: block;
+}
+
 .birthday-date {
     margin-top: 25px;
     font-size: 1.5rem;
@@ -508,23 +516,28 @@ footer {
 
     /* Countdown fits on one line */
     .countdown {
-        gap: 4px;
+        gap: 3px;
         flex-wrap: nowrap;
     }
 
     .time-unit {
         min-width: auto;
-        width: 72px;
-        padding: 8px 4px;
-        border-radius: 10px;
+        width: 65px;
+        padding: 8px 2px;
+        border-radius: 8px;
     }
 
     .time-unit span {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
-    .time-unit label {
-        font-size: 0.45rem;
+    .time-unit .label-full {
+        display: none;
+    }
+
+    .time-unit .label-short {
+        display: block;
+        font-size: 0.5rem;
         letter-spacing: 0px;
     }
 
