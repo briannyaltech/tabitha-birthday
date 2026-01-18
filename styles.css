@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b82f6 100%);
+    position: relative;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.3);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.cake-icon {
+    font-size: 5rem;
+    animation: bounce 1s ease-in-out infinite;
+    margin-top: 20px;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59,130,246,0.3);
+}
+
+nav a:hover, nav a.active {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(59,130,246,0.4);
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Countdown Section */
+.countdown-section {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(59,130,246,0.15);
+    margin-bottom: 40px;
+    border: 1px solid #bae6fd;
+}
+
+.countdown-section h2 {
+    color: #1d4ed8;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.time-unit {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 20px;
+    padding: 20px 30px;
+    min-width: 120px;
+    box-shadow: 0 10px 30px rgba(59,130,246,0.4);
+}
+
+.time-unit span {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.time-unit label {
+    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.birthday-date {
+    margin-top: 25px;
+    font-size: 1.5rem;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* Balloon Section */
+.balloon-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(59,130,246,0.15);
+    border: 1px solid #bae6fd;
+}
+
+.balloon-section h2 {
+    color: #1d4ed8;
+    margin-bottom: 25px;
+}
+
+.balloon-btn {
+    font-size: 1.5rem;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(37,99,235,0.4);
+    animation: wiggle 0.5s ease-in-out infinite;
+}
+
+.balloon-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 40px rgba(37,99,235,0.5);
+}
+
+@keyframes wiggle {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+.clear-btn {
+    margin-top: 15px;
+    padding: 10px 25px;
+    border: 2px solid #3b82f6;
+    background: transparent;
+    color: #3b82f6;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+/* Balloon Drop Animation */
+.balloon-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.balloon {
+    position: absolute;
+    font-size: 4rem;
+    animation: fall linear forwards;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+}
+
+/* BJO balloon image */
+.bjo-balloon {
+    position: absolute;
+    animation: fall linear forwards;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+
+.bjo-balloon img {
+    height: 100px;
+    width: auto;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0.8;
+    }
+}
+
+/* Fun Facts Cards */
+.fun-facts {
+    margin-bottom: 40px;
+}
+
+.fun-facts h2 {
+    text-align: center;
+    color: #1d4ed8;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 25px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(59,130,246,0.15);
+    transition: all 0.3s ease;
+    border: 1px solid #bae6fd;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(59,130,246,0.25);
+}
+
+.card-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #1d4ed8;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Floating Decorations */
+.decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-emoji {
+    position: absolute;
+    font-size: 2.5rem;
+    left: var(--position);
+    animation: float 6s ease-in-out infinite;
+    animation-delay: var(--delay);
+    opacity: 0.6;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10vh) rotate(180deg);
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* Page-specific styles */
+.page-content {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(59,130,246,0.15);
+    margin-bottom: 40px;
+    border: 1px solid #bae6fd;
+}
+
+.page-content h2 {
+    color: #1d4ed8;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Timeline for On This Day */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #60a5fa, #3b82f6, #1d4ed8);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: #ffffff;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #bae6fd;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(59,130,246,0.15);
+}
+
+.timeline-item::before {
+    content: '⭐';
+    position: absolute;
+    left: -42px;
+    top: 20px;
+    font-size: 1.5rem;
+}
+
+.timeline-year {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-item h3 {
+    color: #1e40af;
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    color: #475569;
+    line-height: 1.5;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.photo-placeholder {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.photo-placeholder:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(59,130,246,0.4);
+}
+
+.photo-placeholder .icon {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+/* Gift List */
+.gift-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.gift-item {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.gift-item::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6, #1d4ed8);
+    border-radius: 22px;
+    z-index: -1;
+}
+
+.gift-item:hover {
+    transform: translateY(-5px);
+}
+
+.gift-item .gift-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.gift-item h3 {
+    color: #1d4ed8;
+    margin-bottom: 10px;
+}
+
+.gift-item p {
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.gift-item .price {
+    display: inline-block;
+    background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Birthday message when countdown ends */
+.birthday-message {
+    font-size: 2.5rem;
+    color: #2563eb;
+    animation: bluePulse 2s ease-in-out infinite;
+}
+
+@keyframes bluePulse {
+    0%, 100% { color: #1d4ed8; }
+    50% { color: #60a5fa; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .time-unit {
+        min-width: 80px;
+        padding: 15px 20px;
+    }
+
+    .time-unit span {
+        font-size: 2.5rem;
+    }
+
+    .balloon-btn {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}

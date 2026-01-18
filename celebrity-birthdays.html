@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>">
+    <title>Famous Birthdays - January 20 | Tabitha's Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .celebrity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .celebrity-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(59,130,246,0.15);
+            transition: all 0.3s ease;
+            border: 1px solid #e0f2fe;
+        }
+
+        .celebrity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(59,130,246,0.25);
+        }
+
+        .celebrity-header {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .celebrity-emoji {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .celebrity-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 0;
+        }
+
+        .celebrity-years {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .celebrity-body {
+            padding: 25px;
+        }
+
+        .celebrity-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #1d4ed8;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .celebrity-description {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .celebrity-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            color: #1d4ed8;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .featured-celebrity {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 25px;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .featured-celebrity .celebrity-header {
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .featured-celebrity .celebrity-emoji {
+            font-size: 6rem;
+        }
+
+        .featured-celebrity .celebrity-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .featured-celebrity .celebrity-title {
+            color: #93c5fd;
+        }
+
+        .featured-celebrity .celebrity-description {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+
+        .featured-celebrity .celebrity-tag {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .featured-label {
+            background: #f59e0b;
+            color: #fff;
+            padding: 5px 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 0 0 10px 10px;
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #475569;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .tabitha-card {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+            border: 3px solid #fbbf24;
+        }
+
+        .tabitha-card .celebrity-header {
+            background: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .featured-celebrity {
+                grid-template-columns: 1fr;
+            }
+            .featured-celebrity .celebrity-emoji {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon-container" id="balloonContainer"></div>
+
+    <header>
+        <h1>⭐ Famous January 20th Birthdays ⭐</h1>
+        <p style="color: white; font-size: 1.5rem; margin-top: 10px;">Tabitha shares her birthday with these amazing people!</p>
+    </header>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="on-this-day.html">📅 On This Day</a>
+        <a href="celebrity-birthdays.html" class="active">⭐ Famous Birthdays</a>
+        <a href="gifts.html">🎁 Birthday Gifts</a>
+    </nav>
+
+    <main>
+        <section class="page-content">
+            <h2>🌟 Birthday Twins 🌟</h2>
+            <p class="intro-text">
+                January 20th has given the world astronauts, filmmakers, comedians, and icons.
+                Here are some of the most famous people who share this special birthday!
+            </p>
+
+            <div class="celebrity-grid">
+                <!-- Featured: Tabitha -->
+                <div class="celebrity-card tabitha-card featured-celebrity">
+                    <div class="celebrity-header">
+                        <span class="celebrity-emoji">👑</span>
+                        <h3 class="celebrity-name">TABITHA</h3>
+                        <p class="celebrity-years">The Birthday Queen!</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Most Important Person Born on January 20th</p>
+                        <p class="celebrity-description">
+                            While all these celebrities are impressive, none of them hold a candle to you!
+                            Happy Birthday to the real star of January 20th. May your special day be filled
+                            with joy, love, and all your favorite things!
+                        </p>
+                        <span class="celebrity-tag">🎂 Birthday Queen 👑</span>
+                    </div>
+                </div>
+
+                <!-- Buzz Aldrin -->
+                <div class="celebrity-card">
+                    <div class="celebrity-header">
+                        <span class="featured-label">Legend</span>
+                        <span class="celebrity-emoji">🚀</span>
+                        <h3 class="celebrity-name">Buzz Aldrin</h3>
+                        <p class="celebrity-years">Born 1930</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Astronaut & Moonwalker</p>
+                        <p class="celebrity-description">
+                            The second human to walk on the Moon during Apollo 11. A true American hero
+                            who looked at Earth from 238,900 miles away and helped inspire generations
+                            to reach for the stars.
+                        </p>
+                        <span class="celebrity-tag">🌙 Space Pioneer</span>
+                    </div>
+                </div>
+
+                <!-- Rainn Wilson -->
+                <div class="celebrity-card">
+                    <div class="celebrity-header">
+                        <span class="celebrity-emoji">📋</span>
+                        <h3 class="celebrity-name">Rainn Wilson</h3>
+                        <p class="celebrity-years">Born 1966</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Actor & Comedian</p>
+                        <p class="celebrity-description">
+                            Best known as the iconic Dwight Schrute on "The Office" - assistant TO the
+                            regional manager, beet farmer, and bearer of infinite meme-worthy moments.
+                            Bears. Beets. Battlestar Galactica.
+                        </p>
+                        <span class="celebrity-tag">🎬 Comedy Icon</span>
+                    </div>
+                </div>
+
+                <!-- David Lynch -->
+                <div class="celebrity-card">
+                    <div class="celebrity-header">
+                        <span class="featured-label">Visionary</span>
+                        <span class="celebrity-emoji">🎬</span>
+                        <h3 class="celebrity-name">David Lynch</h3>
+                        <p class="celebrity-years">1946 - 2025</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Filmmaker & Artist</p>
+                        <p class="celebrity-description">
+                            The mastermind behind Twin Peaks, Mulholland Drive, and Blue Velvet.
+                            His surrealist vision changed cinema forever, creating worlds that haunt
+                            and inspire in equal measure.
+                        </p>
+                        <span class="celebrity-tag">🎥 Cinematic Genius</span>
+                    </div>
+                </div>
+
+                <!-- Evan Peters -->
+                <div class="celebrity-card">
+                    <div class="celebrity-header">
+                        <span class="celebrity-emoji">🎭</span>
+                        <h3 class="celebrity-name">Evan Peters</h3>
+                        <p class="celebrity-years">Born 1987</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Actor</p>
+                        <p class="celebrity-description">
+                            Emmy-winning star of American Horror Story and the gripping Dahmer series
+                            on Netflix. Also beloved as Quicksilver in the X-Men films. A chameleon
+                            who disappears into every role.
+                        </p>
+                        <span class="celebrity-tag">🏆 Emmy Winner</span>
+                    </div>
+                </div>
+
+                <!-- Bill Maher -->
+                <div class="celebrity-card">
+                    <div class="celebrity-header">
+                        <span class="celebrity-emoji">🎤</span>
+                        <h3 class="celebrity-name">Bill Maher</h3>
+                        <p class="celebrity-years">Born 1956</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Comedian & TV Host</p>
+                        <p class="celebrity-description">
+                            Host of HBO's "Real Time with Bill Maher" for over 20 years. Known for
+                            his sharp political commentary and willingness to take on any topic,
+                            no matter how controversial.
+                        </p>
+                        <span class="celebrity-tag">📺 Talk Show Legend</span>
+                    </div>
+                </div>
+
+                <!-- Questlove -->
+                <div class="celebrity-card">
+                    <div class="celebrity-header">
+                        <span class="celebrity-emoji">🥁</span>
+                        <h3 class="celebrity-name">Questlove</h3>
+                        <p class="celebrity-years">Born 1971</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Musician & Producer</p>
+                        <p class="celebrity-description">
+                            The legendary drummer and co-frontman of The Roots, the house band for
+                            The Tonight Show. Oscar-winning director of "Summer of Soul." A true
+                            renaissance man of music and culture.
+                        </p>
+                        <span class="celebrity-tag">🏆 Oscar Winner</span>
+                    </div>
+                </div>
+
+                <!-- Federico Fellini -->
+                <div class="celebrity-card">
+                    <div class="celebrity-header">
+                        <span class="featured-label">Master</span>
+                        <span class="celebrity-emoji">🎞️</span>
+                        <h3 class="celebrity-name">Federico Fellini</h3>
+                        <p class="celebrity-years">1920 - 1993</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Legendary Film Director</p>
+                        <p class="celebrity-description">
+                            One of the greatest filmmakers in cinema history. Creator of La Dolce Vita
+                            and 8½. Won four Academy Awards and invented "Felliniesque" - a word for
+                            his unique dreamlike style.
+                        </p>
+                        <span class="celebrity-tag">🎬 Film Legend</span>
+                    </div>
+                </div>
+
+                <!-- DeForest Kelley -->
+                <div class="celebrity-card">
+                    <div class="celebrity-header">
+                        <span class="celebrity-emoji">🖖</span>
+                        <h3 class="celebrity-name">DeForest Kelley</h3>
+                        <p class="celebrity-years">1920 - 1999</p>
+                    </div>
+                    <div class="celebrity-body">
+                        <p class="celebrity-title">Actor</p>
+                        <p class="celebrity-description">
+                            "I'm a doctor, not a [fill in the blank]!" The beloved Dr. Leonard "Bones"
+                            McCoy from Star Trek. His chemistry with Kirk and Spock created TV magic
+                            that still resonates today.
+                        </p>
+                        <span class="celebrity-tag">🖖 Sci-Fi Icon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with 💖 for Tabitha's Special Day!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>">
+    <title>Birthday Gifts | Tabitha's Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        /* Wrapped Present Styles */
+        .gift-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .wrapped-gift {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .wrapped-gift:hover {
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .gift-box {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Gift 1 - Red */
+        .gift-1 .gift-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c0392b 100%);
+        }
+
+        /* Gift 2 - Blue */
+        .gift-2 .gift-box {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+
+        /* Gift 3 - Purple */
+        .gift-3 .gift-box {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+        }
+
+        /* Ribbon - Vertical */
+        .ribbon-vertical {
+            position: absolute;
+            width: 30px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #f1c40f 0%, #f39c12 50%, #f1c40f 100%);
+        }
+
+        /* Ribbon - Horizontal */
+        .ribbon-horizontal {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(180deg, #f1c40f 0%, #f39c12 50%, #f1c40f 100%);
+        }
+
+        /* Bow */
+        .bow {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .bow-loop {
+            position: absolute;
+            width: 50px;
+            height: 35px;
+            background: linear-gradient(135deg, #f1c40f 0%, #e67e22 100%);
+            border-radius: 50% 50% 50% 50%;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+
+        .bow-loop-left {
+            left: -40px;
+            transform: rotate(-30deg);
+        }
+
+        .bow-loop-right {
+            right: -40px;
+            transform: rotate(30deg);
+        }
+
+        .bow-center {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
+            border-radius: 50%;
+            left: 50%;
+            top: 10px;
+            transform: translateX(-50%);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        .bow-tail {
+            position: absolute;
+            width: 15px;
+            height: 40px;
+            background: linear-gradient(180deg, #f1c40f 0%, #e67e22 100%);
+            top: 30px;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .bow-tail-left {
+            left: -5px;
+            transform: rotate(15deg);
+        }
+
+        .bow-tail-right {
+            right: -5px;
+            transform: rotate(-15deg);
+        }
+
+        /* Click hint */
+        .click-hint {
+            text-align: center;
+            margin-top: 15px;
+            color: #764ba2;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Gift label */
+        .gift-label {
+            text-align: center;
+            margin-top: 20px;
+            padding-bottom: 50px;
+            font-size: 1.5rem;
+            color: #764ba2;
+            font-family: 'Fredoka One', sans-serif;
+        }
+
+        /* Override page content padding for gifts section */
+        .page-content {
+            padding-bottom: 110px;
+        }
+
+        /* Modal Popup */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            animation: popIn 0.3s ease;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: #333;
+        }
+
+        .modal-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .modal-description {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon-container" id="balloonContainer"></div>
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="giftModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <img class="modal-image" id="modalImage" src="" alt="Gift">
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <p class="modal-description" id="modalDescription"></p>
+        </div>
+    </div>
+
+    <header>
+        <h1>🎁 Birthday Gifts 🎁</h1>
+        <p style="color: white; font-size: 1.5rem; margin-top: 10px;">Click a present to unwrap it!</p>
+    </header>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="on-this-day.html">📅 On This Day</a>
+        <a href="celebrity-birthdays.html">⭐ Famous Birthdays</a>
+        <a href="gifts.html" class="active">🎁 Birthday Gifts</a>
+    </nav>
+
+    <main>
+        <section class="page-content">
+            <h2>🎀 Birthday Gifts for You! 🎀</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 20px;">
+                Click on each present to reveal your surprise!
+            </p>
+
+            <div class="gift-list">
+                <!-- Gift 1 -->
+                <div class="wrapped-gift gift-1" onclick="openGift(1)">
+                    <div class="bow">
+                        <div class="bow-loop bow-loop-left"></div>
+                        <div class="bow-loop bow-loop-right"></div>
+                        <div class="bow-center"></div>
+                        <div class="bow-tail bow-tail-left"></div>
+                        <div class="bow-tail bow-tail-right"></div>
+                    </div>
+                    <div class="gift-box">
+                        <div class="ribbon-vertical"></div>
+                        <div class="ribbon-horizontal"></div>
+                    </div>
+                    <p class="gift-label">Gift #1</p>
+                </div>
+
+                <!-- Gift 2 -->
+                <div class="wrapped-gift gift-2" onclick="openGift(2)">
+                    <div class="bow">
+                        <div class="bow-loop bow-loop-left"></div>
+                        <div class="bow-loop bow-loop-right"></div>
+                        <div class="bow-center"></div>
+                        <div class="bow-tail bow-tail-left"></div>
+                        <div class="bow-tail bow-tail-right"></div>
+                    </div>
+                    <div class="gift-box">
+                        <div class="ribbon-vertical"></div>
+                        <div class="ribbon-horizontal"></div>
+                    </div>
+                    <p class="gift-label">Gift #2</p>
+                </div>
+
+                <!-- Gift 3 -->
+                <div class="wrapped-gift gift-3" onclick="openGift(3)">
+                    <div class="bow">
+                        <div class="bow-loop bow-loop-left"></div>
+                        <div class="bow-loop bow-loop-right"></div>
+                        <div class="bow-center"></div>
+                        <div class="bow-tail bow-tail-left"></div>
+                        <div class="bow-tail bow-tail-right"></div>
+                    </div>
+                    <div class="gift-box">
+                        <div class="ribbon-vertical"></div>
+                        <div class="ribbon-horizontal"></div>
+                    </div>
+                    <p class="gift-label">Gift #3</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with 💖 for Tabitha's Special Day!</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Gift data - customize titles and descriptions as needed!
+        const gifts = {
+            1: {
+                image: 'gift-1.png',
+                title: 'Gift #1',
+                description: 'A special surprise just for you!'
+            },
+            2: {
+                image: 'gift-2.png',
+                title: 'Gift #2',
+                description: 'Another wonderful present!'
+            },
+            3: {
+                image: 'gift-3.png',
+                title: 'Gift #3',
+                description: 'One more gift to celebrate your day!'
+            }
+        };
+
+        function openGift(giftNumber) {
+            const gift = gifts[giftNumber];
+            document.getElementById('modalImage').src = gift.image;
+            document.getElementById('modalTitle').textContent = gift.title;
+            document.getElementById('modalDescription').textContent = gift.description;
+            document.getElementById('giftModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('giftModal').classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('giftModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

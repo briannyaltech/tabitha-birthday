@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎈</text></svg>">
+    <title>On This Day - January 20 | Tabitha's Birthday</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        .newspaper {
+            background: #fffef5;
+            border-radius: 0;
+            padding: 40px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+            border: 1px solid #d4d0c4;
+        }
+
+        .newspaper-header {
+            text-align: center;
+            border-bottom: 3px double #1a1a1a;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .newspaper-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: -1px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .newspaper-subtitle {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: #555;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .newspaper-date {
+            font-family: 'Libre Baskerville', serif;
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #1a1a1a;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .headline-story {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 25px;
+            margin-bottom: 25px;
+        }
+
+        .headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .byline {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .article-text {
+            font-family: 'Libre Baskerville', serif;
+            color: #333;
+            line-height: 1.8;
+            column-count: 2;
+            column-gap: 30px;
+            text-align: justify;
+        }
+
+        .article-text p {
+            margin-bottom: 15px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .news-item {
+            border-right: 1px solid #ddd;
+            padding-right: 25px;
+        }
+
+        .news-item:last-child {
+            border-right: none;
+        }
+
+        .news-item-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .news-item-year {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 3px 10px;
+            font-family: 'Libre Baskerville', serif;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .news-item-text {
+            font-family: 'Libre Baskerville', serif;
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '◆';
+            margin: 0 15px;
+        }
+
+        @media (max-width: 768px) {
+            .newspaper-title {
+                font-size: 2rem;
+            }
+            .article-text {
+                column-count: 1;
+            }
+            .news-item {
+                border-right: none;
+                border-bottom: 1px solid #ddd;
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon-container" id="balloonContainer"></div>
+
+    <header>
+        <h1>📰 On This Day in History 📰</h1>
+        <p style="color: white; font-size: 1.5rem; margin-top: 10px;">January 20th Through the Ages</p>
+    </header>
+
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a href="on-this-day.html" class="active">📅 On This Day</a>
+        <a href="celebrity-birthdays.html">⭐ Famous Birthdays</a>
+        <a href="gifts.html">🎁 Birthday Gifts</a>
+    </nav>
+
+    <main>
+        <div class="newspaper">
+            <div class="newspaper-header">
+                <h1 class="newspaper-title">The January Gazette</h1>
+                <p class="newspaper-subtitle">All the News That's Fit to Celebrate</p>
+            </div>
+            <div class="newspaper-date">
+                ★ SPECIAL BIRTHDAY EDITION ★ January 20th ★ Historical Headlines ★
+            </div>
+
+            <div class="headline-story">
+                <h2 class="headline">Presidential Inaugurations Define January 20th as Day of New Beginnings</h2>
+                <p class="byline">A date marked by historic transfers of power and landmark speeches</p>
+                <div class="article-text">
+                    <p>January 20th has become synonymous with American presidential inaugurations since 1937, when the 20th Amendment moved the ceremony from March 4th. Franklin D. Roosevelt's second inauguration that year set a tradition that continues to this day.</p>
+                    <p>Among the most memorable moments: John F. Kennedy's 1961 address urging Americans to "ask not what your country can do for you," and Barack Obama's historic 2009 inauguration as the nation's first African American president. In 2021, Kamala Harris made history as the first female Vice President.</p>
+                </div>
+            </div>
+
+            <div class="section-divider">Historic Headlines</div>
+
+            <div class="news-grid">
+                <div class="news-item">
+                    <span class="news-item-year">1265</span>
+                    <h3 class="news-item-headline">First English Parliament Convenes at Westminster</h3>
+                    <p class="news-item-text">Simon de Montfort summons what historians consider the first representative English parliament, laying groundwork for modern democracy.</p>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-item-year">1778</span>
+                    <h3 class="news-item-headline">Captain Cook Makes First European Contact with Hawaii</h3>
+                    <p class="news-item-text">British explorer James Cook lands on the Hawaiian Islands, naming them the "Sandwich Islands" after his patron, the Earl of Sandwich.</p>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-item-year">1892</span>
+                    <h3 class="news-item-headline">First Official Basketball Game Played!</h3>
+                    <p class="news-item-text">In Springfield, Massachusetts, Dr. James Naismith's newly invented game is played publicly for the first time. The sport will become a global phenomenon.</p>
+                </div>
+            </div>
+
+            <div class="section-divider">World Events</div>
+
+            <div class="news-grid">
+                <div class="news-item">
+                    <span class="news-item-year">1841</span>
+                    <h3 class="news-item-headline">Hong Kong Island Claimed by British Forces</h3>
+                    <p class="news-item-text">The island is occupied by British troops, beginning its transformation into one of the world's greatest trading ports and financial centers.</p>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-item-year">1981</span>
+                    <h3 class="news-item-headline">Iran Hostage Crisis Ends After 444 Days</h3>
+                    <p class="news-item-text">Fifty-two American hostages are released from Iran just minutes after Ronald Reagan takes the oath of office, ending a 14-month ordeal.</p>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-item-year">1986</span>
+                    <h3 class="news-item-headline">First Martin Luther King Jr. Day Observed</h3>
+                    <p class="news-item-text">The nation celebrates its first federal holiday honoring the civil rights leader, recognizing his legacy of peace and equality.</p>
+                </div>
+            </div>
+
+            <div class="section-divider">Science & Innovation</div>
+
+            <div class="news-grid">
+                <div class="news-item">
+                    <span class="news-item-year">1930</span>
+                    <h3 class="news-item-headline">Buzz Aldrin Born - Future Moonwalker</h3>
+                    <p class="news-item-text">Edwin "Buzz" Aldrin enters the world in Glen Ridge, New Jersey. He will become the second human to walk on the moon in 1969.</p>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-item-year">1996</span>
+                    <h3 class="news-item-headline">Yasser Arafat Elected Palestinian Leader</h3>
+                    <p class="news-item-text">In the first Palestinian general election, Yasser Arafat wins the presidency with 88% of the vote, marking a historic moment in Middle East politics.</p>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-item-year">2009</span>
+                    <h3 class="news-item-headline">Obama Takes Historic Oath of Office</h3>
+                    <p class="news-item-text">Barack Obama is inaugurated as the 44th President of the United States, becoming the first African American to hold the nation's highest office.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with 💖 for Tabitha's Special Day!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
