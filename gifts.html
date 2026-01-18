@@ -412,6 +412,9 @@
 
     <script src="script.js"></script>
     <script>
+        // Birthday date: January 20, 2026 at 7:45 PM CST
+        const birthdayDate = new Date(2026, 0, 20, 19, 45, 0).getTime();
+
         // Gift data - customize titles and descriptions as needed!
         const gifts = {
             1: {
@@ -432,10 +435,23 @@
         };
 
         function openGift(giftNumber) {
-            const gift = gifts[giftNumber];
-            document.getElementById('modalImage').src = gift.image;
-            document.getElementById('modalTitle').textContent = gift.title;
-            document.getElementById('modalDescription').textContent = gift.description;
+            const now = new Date().getTime();
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+
+            if (now < birthdayDate) {
+                // Not time yet - show locked message
+                modalImage.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🔒</text></svg>';
+                modalTitle.textContent = 'Not Time Yet!';
+                modalDescription.textContent = 'This gift cannot be opened until January 20, 2026 at 7:45 PM. Come back then to see your surprise!';
+            } else {
+                // Birthday time - show the actual gift
+                const gift = gifts[giftNumber];
+                modalImage.src = gift.image;
+                modalTitle.textContent = gift.title;
+                modalDescription.textContent = gift.description;
+            }
             document.getElementById('giftModal').classList.add('active');
         }
 
