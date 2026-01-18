@@ -124,11 +124,16 @@ main {
 }
 
 .time-unit .label-short {
-    display: none;
+    display: none !important;
 }
 
 .time-unit .label-full {
-    display: block;
+    display: block !important;
+}
+
+/* Hide second emoji on mobile */
+.hide-mobile {
+    display: inline;
 }
 
 .birthday-date {
@@ -532,13 +537,17 @@ footer {
     }
 
     .time-unit .label-full {
-        display: none;
+        display: none !important;
     }
 
     .time-unit .label-short {
-        display: block;
+        display: block !important;
         font-size: 0.5rem;
         letter-spacing: 0px;
+    }
+
+    .hide-mobile {
+        display: none !important;
     }
 
     .birthday-date {
