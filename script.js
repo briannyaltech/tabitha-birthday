@@ -1,5 +1,8 @@
 // Birthday countdown
-const birthdayDate = new Date('January 20, 2026 00:00:00').getTime();
+// January 20, 2026 at 7:45 PM CST
+// Month is 0-indexed (0 = Jan), so January = 0
+// new Date(year, month, day, hour, minute, second)
+const birthdayDate = new Date(2026, 0, 20, 19, 45, 0).getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
