@@ -498,30 +498,36 @@ footer {
 /* Responsive */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         padding: 0 10px;
     }
 
     header p {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
+    }
+
+    /* Countdown fits on one line */
+    .countdown {
+        gap: 8px;
     }
 
     .time-unit {
-        min-width: 70px;
-        padding: 12px 15px;
+        min-width: 60px;
+        padding: 10px 8px;
     }
 
     .time-unit span {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .time-unit label {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
+        letter-spacing: 1px;
     }
 
     .balloon-btn {
-        font-size: 1.1rem;
-        padding: 15px 25px;
+        font-size: 1rem;
+        padding: 12px 20px;
     }
 
     /* Stack nav vertically on mobile */
@@ -546,14 +552,14 @@ footer {
     .countdown-section,
     .balloon-section,
     .page-content {
-        padding: 25px 20px;
+        padding: 20px 15px;
         border-radius: 20px;
     }
 
     .countdown-section h2,
     .balloon-section h2,
     .page-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .cards {
@@ -565,7 +571,7 @@ footer {
     }
 
     .birthday-date {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     footer {
