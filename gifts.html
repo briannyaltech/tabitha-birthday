@@ -442,12 +442,13 @@
 
             if (now < birthdayDate) {
                 // Not time yet - show locked message
-                modalImage.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🔒</text></svg>';
-                modalTitle.textContent = 'Not Time Yet!';
+                modalImage.style.display = 'none';
+                modalTitle.textContent = '🔒 Not Time Yet! 🔒';
                 modalDescription.textContent = 'This gift cannot be opened until January 20, 2026 at 7:45 PM. Come back then to see your surprise!';
             } else {
                 // Birthday time - show the actual gift
                 const gift = gifts[giftNumber];
+                modalImage.style.display = 'block';
                 modalImage.src = gift.image;
                 modalTitle.textContent = gift.title;
                 modalDescription.textContent = gift.description;
