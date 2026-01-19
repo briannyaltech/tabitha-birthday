@@ -143,6 +143,35 @@ main {
     font-weight: bold;
 }
 
+/* Birthday Girl Section */
+.birthday-girl-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(59,130,246,0.15);
+    border: 1px solid #bae6fd;
+}
+
+.birthday-girl-section h2 {
+    color: #1d4ed8;
+    margin-bottom: 25px;
+}
+
+.birthday-girl-photo {
+    display: flex;
+    justify-content: center;
+}
+
+.birthday-girl-photo img {
+    max-width: 100%;
+    max-height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(59,130,246,0.3);
+    border: 4px solid #3b82f6;
+}
+
 /* Balloon Section */
 .balloon-section {
     text-align: center;
@@ -581,9 +610,16 @@ footer {
 
     .countdown-section,
     .balloon-section,
+    .birthday-girl-section,
     .page-content {
         padding: 20px 10px;
         border-radius: 20px;
+    }
+
+    .birthday-girl-photo img {
+        max-height: 300px;
+        border-radius: 15px;
+        border-width: 3px;
     }
 
     .countdown-section h2,
