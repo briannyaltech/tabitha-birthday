@@ -1,8 +1,21 @@
 // Birthday countdown
-// January 20, 2026 at 8:10 PM CST
-// Month is 0-indexed (0 = Jan), so January = 0
-// new Date(year, month, day, hour, minute, second)
-const birthdayDate = new Date(2026, 0, 20, 20, 10, 0).getTime();
+// January 20, 2026 at 8:10 PM CST (9:10 PM EST)
+// Using UTC to ensure consistent time across all timezones
+// 8:10 PM CST = 2:10 AM UTC on January 21, 2026
+const birthdayDate = new Date(Date.UTC(2026, 0, 21, 2, 10, 0)).getTime();
+
+// Format the birthday date in user's local timezone
+function getLocalBirthdayString() {
+    const date = new Date(birthdayDate);
+    return date.toLocaleString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        timeZoneName: 'short'
+    });
+}
 
 // Track if birthday celebration has already been triggered
 let birthdayCelebrated = false;
@@ -44,6 +57,12 @@ function updateCountdown() {
 if (document.getElementById('countdown')) {
     updateCountdown();
     setInterval(updateCountdown, 1000);
+}
+
+// Update birthday date display with user's local timezone
+const birthdayDateDisplay = document.getElementById('birthdayDateDisplay');
+if (birthdayDateDisplay) {
+    birthdayDateDisplay.textContent = getLocalBirthdayString();
 }
 
 // Balloon drop functionality
