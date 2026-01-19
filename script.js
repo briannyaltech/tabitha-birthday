@@ -4,6 +4,9 @@
 // new Date(year, month, day, hour, minute, second)
 const birthdayDate = new Date(2026, 0, 20, 19, 45, 0).getTime();
 
+// Track if birthday celebration has already been triggered
+let birthdayCelebrated = false;
+
 function updateCountdown() {
     const now = new Date().getTime();
     const distance = birthdayDate - now;
@@ -16,8 +19,11 @@ function updateCountdown() {
             </div>
         `;
         document.querySelector('.birthday-date').textContent = "It's YOUR day!";
-        // Auto-trigger balloon drop on birthday!
-        dropBalloons();
+        // Auto-trigger balloon drop on birthday (only once)
+        if (!birthdayCelebrated) {
+            birthdayCelebrated = true;
+            dropBalloons();
+        }
         return;
     }
 
