@@ -72,12 +72,12 @@
             background: linear-gradient(180deg, #f1c40f 0%, #f39c12 50%, #f1c40f 100%);
         }
 
-        /* Bow */
+        /* Bow - centered at ribbon intersection */
         .bow {
             position: absolute;
-            top: -25px;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             z-index: 10;
         }
 
@@ -92,11 +92,13 @@
 
         .bow-loop-left {
             left: -40px;
+            top: -10px;
             transform: rotate(-30deg);
         }
 
         .bow-loop-right {
             right: -40px;
+            top: -10px;
             transform: rotate(30deg);
         }
 
@@ -107,8 +109,8 @@
             background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
             border-radius: 50%;
             left: 50%;
-            top: 10px;
-            transform: translateX(-50%);
+            top: 50%;
+            transform: translate(-50%, -50%);
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
         }
 
@@ -117,7 +119,7 @@
             width: 15px;
             height: 40px;
             background: linear-gradient(180deg, #f1c40f 0%, #e67e22 100%);
-            top: 30px;
+            top: 15px;
             border-radius: 0 0 5px 5px;
         }
 
@@ -278,10 +280,6 @@
                 height: 20px;
             }
 
-            .bow {
-                top: -20px;
-            }
-
             .bow-loop {
                 width: 32px;
                 height: 22px;
@@ -289,22 +287,23 @@
 
             .bow-loop-left {
                 left: -25px;
+                top: -8px;
             }
 
             .bow-loop-right {
                 right: -25px;
+                top: -8px;
             }
 
             .bow-center {
                 width: 20px;
                 height: 20px;
-                top: 8px;
             }
 
             .bow-tail {
                 width: 10px;
                 height: 28px;
-                top: 24px;
+                top: 10px;
             }
 
             .modal-content {
