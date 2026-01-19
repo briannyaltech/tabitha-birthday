@@ -1,8 +1,8 @@
 // Birthday countdown
-// January 20, 2026 at 7:45 PM CST
+// January 20, 2026 at 8:10 PM CST
 // Month is 0-indexed (0 = Jan), so January = 0
 // new Date(year, month, day, hour, minute, second)
-const birthdayDate = new Date(2026, 0, 20, 19, 45, 0).getTime();
+const birthdayDate = new Date(2026, 0, 20, 20, 10, 0).getTime();
 
 // Track if birthday celebration has already been triggered
 let birthdayCelebrated = false;
